@@ -5,10 +5,14 @@ from pathlib import Path
 from crypto import *
 from jira import *
 import json  # Missing import for json
+from dotenv import load_dotenv
 root_dir = Path('important_files')
 CHECKSUM_FILE = "checksums.json"
-intervel = 60
 
+# intervel = 60 * 60 # 60 seconds times 60 minuts. Exactly One hour
+interval = os.getenv("INTERVAL")
+
+load_dotenv()
 
 """
 1. Check hash
@@ -94,14 +98,13 @@ def add_hash_to_checksum_file(file_path, new_hash):
 if __name__ == "__main__":
     print("================= File Integrity Checker Version 1.0 =================")
     # intervel = 60 * 60 # 60 seconds times 60 minuts. Exactly One hour
-    intervel = 15
     count = 0
     try:
         while True:
             now = datetime.now(timezone.utc).isoformat()
             print(f"\n\n[{now}] file integrity check. Count = {count}\n")
             verify_integrity()
-            time.sleep(intervel)
+            time.sleep(interval)
             count += 1
     except KeyboardInterrupt:
         print("Keyboard Inturrupt detected Quiting...")
