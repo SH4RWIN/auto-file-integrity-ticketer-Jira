@@ -40,8 +40,8 @@ This project is a Python-based file integrity monitoring tool that periodically 
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/Integrity_Checker.git
-    cd Integrity_Checker
+    git clone https://github.com/SH4RWIN/auto-file-integrity-ticketer-Jira.git
+    cd auto-file-integrity-ticketer-Jira
     ```
 
 2.  **Install Dependencies**

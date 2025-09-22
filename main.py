@@ -10,7 +10,7 @@ root_dir = Path('important_files')
 CHECKSUM_FILE = "checksums.json"
 
 # intervel = 60 * 60 # 60 seconds times 60 minuts. Exactly One hour
-interval = os.getenv("INTERVAL")
+interval = int(os.getenv("INTERVAL"))
 
 load_dotenv()
 
